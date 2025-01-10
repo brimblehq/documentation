@@ -2,10 +2,8 @@
 title: Ronin
 ---
 
-Write code schema, then to apply it:
+Write code schema, then apply it:
 
 ```
-bunx ronin migration create --prod --apply
+bunx ronin diff --apply
 ```
-
-I put above in `package.json` as `ronin-migrate` command.
