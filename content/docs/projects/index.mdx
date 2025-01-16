@@ -1,5 +1,104 @@
 ---
-title: Projects
+title: 'Projects'
+description: 'Set up your Project on Brimble to manage deployments and custom domains effortlessly. Learn how to configure and optimize your projects with this guide.'
 ---
 
-[Focus](./focus) goes over projects I am currently focused on.
+To deploy on Brimble, you need to create a [Project](https://beta.brimble.io/projects). A Project groups [deployments](https://github.com/mintlify/starter) and [custom domains](/getting-started/buy-domain). Each project can receive deployments from GitHub, GitLab, Bitbucket, or the Brimble CLI.
+
+To learn more about limits on the number of projects you can have, [see Limits](https://brimble.io/pricing).
+
+## Creating a Project
+
+To create a [new](https://beta.brimble.io/projects) project in Brimble, follow these steps:
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+
+### Select the Correct Team
+
+Navigate to the Brimble dashboard. Ensure you have selected the correct team from the team selector at the top of the page.  
+![Image](https://res.cloudinary.com/dfdilofw7/image/upload/v1717600814/Screenshot_125_dqxjsv.png)  
+If you haven't created a team yet, click the **"Create A Team"** button on the Teams page.  
+![Image](https://res.cloudinary.com/dfdilofw7/image/upload/v1717598846/Screenshot_119_nruvyf.png)
+
+</Step>
+<Step>
+
+### Start a New Project
+
+Go to the [**Projects**](https://beta.brimble.io/projects) section. Click on the **"Create A New Project"** card in the Projects section.
+
+</Step>
+<Step>
+
+### Choose Your Project Source
+
+You can [**import from an existing GitHub repository**](/getting-started/import) or [**deploy from a template**](/getting-started/template).  
+- For GitHub, connect to your Git provider and select your desired repository.  
+- If using a template, browse available options and choose one that fits your project needs.
+
+</Step>
+<Step>
+
+### Configure and Deploy
+
+After selecting your project source, configure the necessary settings and click **"Import"** to start the deployment process.
+
+</Step>
+</Steps>
+
+## Managing a Project
+
+You can manage your projects directly in the Brimble dashboard. See our project dashboard docs for more details.
+
+## Project Settings
+
+Brimble's Project Settings enable you to manage domains, logs, integrations, Git, caching, environment variables, deployment protection, and security settings.
+
+<Steps>
+<Step>
+
+### Select Your Team
+
+Navigate to the Brimble dashboard and select the correct team from the team selector.
+
+</Step>
+<Step>
+
+### Choose Your Project
+
+From the Projects section, select the project you want to configure.
+
+</Step>
+<Step>
+
+### Access Project Settings
+
+Inside the project, click the **Settings** tab in the project menu.
+
+</Step>
+<Step>
+
+### Modify Your Settings
+
+Adjust settings in sections like **Domains**, **Logs**, **Integrations**, **Git**, **Environment Variables**, and more to meet your requirements.
+
+</Step>
+</Steps>
+
+## Example Actions
+
+- **Add a Custom Domain:** Link your project to a specific domain by clicking the [**"Add a custom domain"**](/domains-overview/domains/add-a-domain) button.  
+- **Redeploy:** Use the **"Redeploy"** option to trigger a new deployment.  
+- **Transfer Project:** Move the project to a different team or account using the **"Transfer Project"** option.  
+- **Delete Project:** Permanently remove the project by selecting **"Delete Project"** (this action is irreversible).
+
+## Environment Variables
+
+Configure Environment Variables directly from Project Settings. Check out the Environment Variables documentation for more details.
+
+## Custom Domains
+
+You can add custom domains for each project. Refer to the [Domains documentation](/domains-overview/domains/add-a-domain) to learn more.

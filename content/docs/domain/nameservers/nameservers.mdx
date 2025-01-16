@@ -1,0 +1,42 @@
+---
+title: 'Working with Nameservers'
+description: 'Learn about nameservers and the benefits Brimble nameservers provide.'
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Callout>
+Before moving your domain to use Brimble's nameservers, you should ensure that you own the domain listed on the Domains page of your account.
+</Callout>
+
+Nameservers are crucial components of the internet infrastructure responsible for translating domain names into IP addresses. At Brimble, we provide our own nameservers to facilitate this process seamlessly. When you purchase your domain through Brimble, we take care of setting up all the necessary DNS records, including nameserver records.
+
+<Tabs items={["Primary Nameserver", "Secondary Nameserver"]}>
+  <Tab title="Primary Nameserver">
+    ```ts
+    ns1.brimble-dns.com
+    ```
+  </Tab>
+  <Tab title="Secondary Nameserver">
+    ```ts
+    ns2.brimble-dns.com
+    ```
+  </Tab>
+</Tabs>
+
+By using Brimble's nameservers, anyone searching for your site will be directed to the correct location. This ensures smooth navigation and accessibility for your online presence.
+
+## Benefits of Using Brimble Nameservers
+
+### 1. Automatic DNS Records
+With Brimble's nameservers, domains automatically generate DNS records for the apex domain and first-level subdomains. This means you can add a domain or subdomain to your project without worrying about DNS configurations. This automation minimizes errors and eliminates the need for manual CNAME entries, especially useful if your project uses multiple subdomains.
+
+### 2. Wildcard Domains
+Using Brimble's nameservers allows you to add wildcard domains effortlessly, requiring no additional configuration.
+
+### 3. Custom Nameservers
+For domains registered with Brimble, you can add custom nameservers directly from the dashboard. This feature enables delegation to other DNS providers. You can add up to four nameservers at a time and revert to your previous settings if needed.
+
+<Callout>
+Before using Brimble's nameservers, you should ensure that you own the domain.
+</Callout>

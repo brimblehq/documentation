@@ -1,0 +1,56 @@
+---
+title: 'env'
+description: 'Learn how to manage shared Environment Variables in Brimble for secure and dynamic configurations across projects.'
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+### Shared Environment Variables
+
+Shared Environment Variables in Brimble allow you to reuse and manage common configuration values across multiple projects, enhancing consistency and security.
+
+---
+
+### Setting Up a Shared Environment Variable
+
+<Steps>
+<Step>
+
+### Access Shared Settings
+
+Go to your Brimble dashboard and navigate to the **Shared Environment Variables** section under **Settings**.  
+![Image](https://res.cloudinary.com/dfdilofw7/image/upload/v1718229298/Screenshot_137_jpyecf.png)
+
+</Step>
+<Step>
+
+### Add a Variable
+
+Click the **"Add Variable"** button. Define the key (e.g., `API_BASE_URL`) and value, ensuring the key name is unique and descriptive.
+
+</Step>
+<Step>
+
+### Apply to Projects
+
+Select the projects where this variable should be applied. This ensures consistency across multiple deployments.
+
+</Step>
+<Step>
+
+### Save Changes
+
+Click **"Save"** to finalize your shared Environment Variable. New deployments of selected projects will automatically include this variable.
+
+</Step>
+</Steps>
+
+---
+
+### Best Practices
+
+- **Centralize Common Values:** Use shared variables for configurations like API endpoints, ensuring consistency across projects.  
+- **Review Permissions:** Limit access to sensitive variables to only those who need it.  
+- **Test Before Deployment:** Verify variable values in staging environments to avoid misconfigurations.
+
+By using shared Environment Variables, you streamline your project management and ensure consistent, secure configurations across environments.

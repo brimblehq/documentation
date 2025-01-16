@@ -1,0 +1,56 @@
+---
+title: "Installation Guide for Brimble CLI"
+description: "The Brimble CLI enables you to set up Brimble on your own infrastructure, providing a portable and scalable solution for your business. This guide outlines the installation steps and prerequisites to get started.
+"
+---
+
+
+
+## Prerequisites
+
+Before you begin, ensure your environment meets the following requirements:
+
+- **Standard Server Requirements**:
+  - **RAM**: 32 GB
+  - **CPU**: 2–4 cores
+  - **Storage**: 50 GB
+
+- **Software Dependencies**:
+  - Node.js: `20.x`
+  - Docker: `latest`
+  - Redis: `latest`
+  - Nomad: `1.6.3`
+  - Consul Client: `https://cdn.brimble.io/consul.sh`
+
+<Callout>
+Ensure that all servers are accessible via SSH and have appropriate credentials configured.
+</Callout>
+
+---
+
+## Installation Steps
+
+### Step 1: Generate License Keys
+
+1. Log in to your Brimble account.
+2. Navigate to the **Licenses** section.
+3. Generate a license key for your infrastructure.
+
+> Keep your license key secure, as it is required for authentication during the setup process.
+
+---
+
+### Step 2: Provision Servers
+
+Provision servers that meet the recommended specifications. Assign each server a public and private IP.
+
+```json
+{
+  "host": "test-2",
+  "username": "root",
+  "key_path": "~/.ssh/id_rsa",
+  "public_ip": "178.128.161.67",
+  "private_ip": "10.106.0.4",
+  "auth_method": "key_path",
+  "region": "europe"
+}

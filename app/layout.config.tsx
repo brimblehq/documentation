@@ -14,15 +14,15 @@ export const baseOptions: BaseLayoutProps = {
   links: [
     {
       text: "Home",
-      url: "https://nikiv.dev",
+      url: "https://docs.brimble.io",
     },
     {
-      text: "GitHub",
-      url: "https://github.com/nikitavoloboev",
+      text: "Discord",
+      url: "https://discord.brimble.io",
     },
     {
       text: "X",
-      url: "https://x.com/nikitavoloboev",
+      url: "https://x.com/brimblehq",
     },
   ],
 }

@@ -1,0 +1,47 @@
+---
+title: "Domains Overview"
+description: 'Learn the fundamentals of how domains, nameservers, and DNS work on Brimble.'
+---
+
+Welcome to the Brimble Domains Overview! Here, we'll dive into the fundamentals of domains, DNS, and nameservers to empower you with the knowledge needed to navigate the web confidently.
+
+### Understanding Domains
+
+A domain serves as a user-friendly alias for accessing websites on the internet. For instance, the domain you're currently exploring is brimble.com. Think of domains as the addresses to your digital homes; just like sending a letter, visitors to your site need only know the domain name, and the intricate routing of internet traffic is managed behind the scenes.
+
+### The Role of DNS
+
+DNS, or the Domain Name System, plays a pivotal role in managing the intricacies of internet navigation. At its core, DNS translates human-readable domain names into machine-friendly IP addresses. When you enter a domain into your browser, the first step is converting this domain into its corresponding IP address—a process known as DNS Resolution. Understanding DNS is key to ensuring accurate domain configuration.
+
+### Navigating DNS Resolution
+
+When you enter a domain into your browser, here's what happens behind the scenes:
+
+1. **Local DNS Cache**: Your browser checks its cache to see if it already knows the IP address of the domain. If cached, it proceeds directly to the site.
+
+2. **Recursive Resolver**: If not cached, your browser sends a DNS query to a recursive resolver, a mediator between your browser and DNS servers. The resolver seeks the IP address, first checking its cache and then querying DNS servers if necessary.
+
+3. **Hierarchy of DNS Servers**: A network of DNS servers, arranged in a hierarchical structure, collaborates to resolve the domain. Root nameservers, TLD nameservers, and authoritative nameservers work 
+together to pinpoint the IP address associated with the domain.
+
+<Callout> When your browser initiates a DNS query, it follows a hierarchical pattern to resolve domain names:</Callout>
+
+- Root Nameservers: At the foundation of the DNS hierarchy are the 13 root nameservers, strategically positioned worldwide. These servers are the initial point of contact for DNS queries. Upon receiving a request, a root server examines the domain name and directs the resolver to the appropriate TLD server based on the top-level domain (TLD), such as .com, .org, or .net.
+- TLD Nameservers: TLD nameservers store information about domains within their respective top-level domains. For instance, when resolving the domain brimble.io, the recursive resolver queries the .com TLD nameserver after receiving guidance from the root nameserver. The .com TLD server responds with details about the authoritative nameserver responsible for managing brimble.io.
+- Authoritative Nameserver: The authoritative nameserver holds the definitive information about a specific domain, including its IP address mapping. In our example, once the .com TLD nameserver identifies the authoritative nameserver for brimble.io, it retrieves the IP address mapping from this authoritative source. The authoritative nameserver then furnishes this information to the recursive resolver, which caches the result and furnishes it to your browser.
+
+By traversing this hierarchical structure, DNS resolution efficiently translates domain names into IP addresses, facilitating seamless web navigation for users worldwide.
+
+
+4. **HTTP Request**: Once the IP address is retrieved, your browser initiates an HTTP request to the web server located at that IP address, fetching the desired web content.
+<Callout>
+  This list is just a general overview and doesn't happen every time. Most of us tend to visit the same sites over and over. Therefore, the request will first check the cache from your browser and then from the recursive resolver, allowing for quicker load times. In addition, this example describes a basic unicast DNS network. In reality, when using
+   Brimble, you're using anycast servers on the Edge Network.
+</Callout>
+### Developer's Perspective
+
+As a developer deploying projects on Brimble, your sites reside on our servers. However, users' browsers require DNS lookup to locate your site's IP address. By understanding DNS, you can optimize site performance and ensure seamless user experiences.
+
+That wraps up our Brimble Domains Overview! Armed with this knowledge, you're equipped to harness the power of domains and DNS in your web projects.
+
+Stay tuned for more insights and resources from Brimble as we journey together through the digital landscape.
