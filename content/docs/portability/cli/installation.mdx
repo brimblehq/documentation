@@ -1,5 +1,5 @@
 ---
-title: "Installation Guide for Brimble CLI"
+title: "Installation"
 description: "The Brimble CLI enables you to set up Brimble on your own infrastructure, providing a portable and scalable solution for your business. This guide outlines the installation steps and prerequisites to get started.
 "
 ---
@@ -44,7 +44,7 @@ Ensure that all servers are accessible via SSH and have appropriate credentials 
 
 Provision servers that meet the recommended specifications. Assign each server a public and private IP.
 
-```json
+```js
 {
   "host": "test-2",
   "username": "root",
@@ -54,3 +54,72 @@ Provision servers that meet the recommended specifications. Assign each server a
   "auth_method": "key_path",
   "region": "europe"
 }
+```
+
+
+
+### Step 3: Provision Servers
+
+Install the Brimble CLI globally using npm:
+```package-install
+npm install -g @brimble/cli
+```
+
+### Step 4: Configure the CLI
+Create a configuration file (brimble.config.json) to define your server setup:
+```json
+{
+  "servers": [
+    {
+      "host": "test-2",
+      "username": "root",
+      "key_path": "~/.ssh/id_rsa",
+      "public_ip": "178.128.161.67",
+      "private_ip": "10.106.0.4",
+      "auth_method": "key_path"
+    }
+  ],
+  "runner": {
+    "port": 3000,
+    "instances": 4
+  },
+  "monitoring": {
+    "grafana_password": "password",
+    "metrics_port": 9100
+  }
+}
+
+### Step 5: Run the Setup Script
+```js
+brimble setup --config brimble.config.json --license <YOUR_LICENSE_KEY>
+```
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+ 
+<Tabs items={["Linux/Ma", "Windows"]}> 
+ 
+```ts tab
+sudo brimble setup --config brimble.config.json --license <YOUR_LICENSE_KEY>
+```
+ 
+```ts tab
+# Windows Setup
+brimble setup --config brimble.config.json --license <YOUR_LICENSE_KEY>
+```
+ 
+</Tabs>
+
+### Step 6: Verify Installation
+Check the status of your setup using the CLI:
+```js
+brimble status
+```
+Example output:
+```js
+All servers configured successfully!
+Nomad cluster initialized: ✓
+Consul service running: ✓
+Metrics setup completed: ✓
+```
+
+<Callout> For support, contact us at [support@brimble.io](mailto:support@brimble.io). </Callout>

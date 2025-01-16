@@ -1,0 +1,111 @@
+---
+title: "Configuration"
+description: "Configuration Guide"
+---
+
+## Introduction
+
+This section provides detailed information about configuring the Brimble CLI tool for setting up Brimble on your own servers. Proper configuration ensures smooth deployment and optimal performance of the infrastructure.
+
+### Configuration Overview
+
+The configuration file, `config.json`, serves as the backbone of the setup process. It defines server details, cluster parameters, monitoring settings, and versions for core components.
+
+#### Configuration File Format
+
+```json
+{
+  "servers": [
+    {
+      "host": "test-2",
+      "username": "root",
+      "key_path": "~/.ssh/id_rsa",
+      "region": "europe",
+      "public_ip": "178.128.161.67",
+      "private_ip": "10.106.0.4",
+      "auth_method": "key_path"
+    }
+  ],
+  "cluster_config": {
+    "runner": {
+      "port": 3000,
+      "instances": 4
+    },
+    "consul": {
+      "consul_image": "hashicorp/consul:1.16"
+    },
+    "monitoring": {
+      "grafana_password": "password",
+      "metrics_port": 9100
+    }
+  },
+  "versions": {
+    "docker": "latest",
+    "nodejs": "20.x",
+    "nomad": "1.6.3"
+  },
+  "registry": {
+    "username": "",
+    "password": "",
+    "type": "",
+    "region": "",
+    "projectId": ""
+  }
+}
+
+
+### Field Reference
+#### Server Configuration
+
+| **Field**     | **Type** | **Required** | **Description**                            | **Example**          |
+|---------------|----------|--------------|--------------------------------------------|----------------------|
+| `host`        | string   | Yes          | Server hostname or identifier              | `"test-2"`           |
+| `username`    | string   | Yes          | SSH username for server access             | `"root"`             |
+| `key_path`    | string   | No           | Path to the SSH private key                | `"~/.ssh/id_rsa"`    |
+| `region`      | string   | Yes          | Datacenter or server region                | `"europe"`           |
+| `public_ip`   | string   | Yes          | Public IP address of the server            | `"178.128.161.67"`   |
+| `private_ip`  | string   | Yes          | Private IP address of the server           | `"10.106.0.4"`       |
+| `auth_method` | string   | No           | Authentication method (`key_path` or `temp_key`) | `"key_path"`  |
+
+### Cluster Configuration
+#### Runner Settings
+| **Field**      | **Type** | **Required** | **Description**                        | **Example** |
+|----------------|----------|--------------|----------------------------------------|-------------|
+| `port`         | number   | Yes          | Port number for the runner service     | `3000`      |
+| `instances`    | number   | Yes          | Number of runner instances to deploy   | `4`         |
+
+#### Monitoring Settings
+| **Field**          | **Type** | **Required** | **Description**                      | **Example**   |
+|--------------------|----------|--------------|--------------------------------------|---------------|
+| `grafana_password` | string   | Yes          | Password for Grafana dashboard access | `"password"` |
+| `metrics_port`     | number   | Yes          | Port for metrics collection          | `9100`        |
+
+### Versions
+| **Field**   | **Type** | **Required** | **Description**                  | **Example**   |
+|-------------|----------|--------------|----------------------------------|---------------|
+| `docker`    | string   | Yes          | Docker version to install        | `"latest"`    |
+| `nodejs`    | string   | Yes          | Node.js version to install       | `"20.x"`      |
+| `nomad`     | string   | Yes          | Nomad version to install         | `"1.6.3"`     |
+
+## Authentication Notes
+<Callout>
+**Important**: All servers in a deployment must use the same authentication method.
+</Callout>
+
+1. **Using `--temp-ssh` Flag**  
+   If the flag is provided, it overrides all server configurations. Ensure all servers use `"auth_method": "temp_key"` or omit the field.
+
+2. **Without `--temp-ssh`**  
+   The `auth_method` in `config.json` is followed. Ensure consistent use of `key_path`.
+
+### Examples
+#### Valid Configurations
+```js
+{
+  "servers": [
+    {
+      "auth_method": "temp_key" // Works with --temp-ssh
+    }
+  ]
+}
+```

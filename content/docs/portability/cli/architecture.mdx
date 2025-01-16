@@ -1,0 +1,88 @@
+---
+title: "Architecture"
+description: "Learn about the architecture of Brimble's portable deployment system."
+---
+
+The Brimble CLI tool facilitates setting up Brimble on your own servers, leveraging a robust microservices architecture. This design prioritizes scalability, security, and maintainability, making it suitable for businesses of all sizes. Below, we outline the architecture's components, design principles, and data flow.
+
+---
+
+## Core Components
+
+| **Component**            | **Description**                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| **Load Balancer**         | Entry point for client requests, distributing traffic efficiently.              |
+| **Tailscale VPN Gateway** | Provides secure, private network connections across servers.                    |
+| **Brimble Runners**       | Distributed task execution nodes outside the main datacenter.                   |
+| **Nomad Cluster**         | Handles container orchestration with a leader-follower configuration.           |
+| **Consul Service Mesh**   | Manages service discovery, health checks, and configuration.                    |
+| **Backend Services**      | TCP/UDP services distributed across Nomad nodes for high availability.          |
+
+---
+
+## Key Features
+
+<Callout>
+The architecture is designed to balance performance, scalability, and security while ensuring high availability.
+</Callout>
+
+1. **Scalability**  
+   Horizontal scaling ensures seamless handling of increased workloads.
+   
+2. **Security**  
+   Isolated network segments and a VPN gateway protect sensitive data.
+   
+3. **High Availability**  
+   Distributed nodes and a leader-follower Nomad cluster configuration reduce downtime.
+
+4. **Service Discovery**  
+   Dynamic service registration and discovery are managed via Consul.
+
+5. **Observability**  
+   Integrated metrics and monitoring tools (Prometheus, Grafana) ensure comprehensive system insights.
+
+---
+
+## Data Flow
+
+1. **Client Requests**
+   - All client requests begin at the **Load Balancer**.
+
+2. **VPN Gateway**
+   - Requests are routed through the **Tailscale VPN Gateway** for secure access.
+
+3. **Distributed Execution**
+   - The gateway distributes traffic to either:
+     - **Brimble Runners** for task execution.
+     - Datacenter services managed by the **Nomad Cluster**.
+
+4. **Backend Communication**
+   - Backend services within the datacenter communicate over a secure mesh provided by **Consul**.
+
+---
+
+## Deployment Workflow
+
+### Initial Setup
+
+1. **Install CLI**: Use the Brimble CLI to initialize the setup.
+2. **Generate License**: Obtain and validate the license key.
+3. **Provision Servers**: Configure servers with the recommended specifications.
+4. **Install Dependencies**: Deploy required tools and configurations:
+   - Nomad
+   - Consul
+   - Docker
+   - Node.js
+5. **Configure Metrics and Monitoring**:
+   - Install `node-exporter`, `cAdvisor`, and `Grafana-Promtail`.
+   - Attach Loki to deployment containers for centralized logging.
+
+### Monitoring and Observability
+
+- Deploy Prometheus for metrics collection (private IP).
+- Set up Grafana for dashboards and monitoring (public IP).
+
+---
+
+## Script Installation Process
+
