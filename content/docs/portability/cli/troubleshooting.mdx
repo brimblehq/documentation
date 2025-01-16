@@ -1,0 +1,98 @@
+---
+title: "Troubleshooting"
+description: "A guide to troubleshooting common issues during the Brimble CLI tool setup process."
+---
+
+# Troubleshooting the Brimble CLI Tool Setup
+
+The Brimble CLI tool helps to streamline the process of setting up Brimble on your own servers. While the setup is straightforward, you might encounter a few common issues during the installation and configuration process. This guide outlines the solutions to resolve those issues.
+
+
+## Common Issues and Solutions
+
+### License Key Validation Failure
+
+- **Issue**: The system fails to validate the license key.
+- **Solution**:
+  - Ensure that the license key is correct and associated with your account. 
+  - Double-check that the key is properly registered with Brimble's API.
+  - If using a custom environment or server, confirm that the license key is still valid for your specific server setup.
+
+
+### Network Connectivity Issues
+
+- **Issue**: Servers are unable to communicate due to network-related problems.
+- **Solution**:
+  - Verify the firewall settings on each server. Ensure that all necessary ports (e.g., for Nomad, Consul, and Brimble Runner) are open.
+  - Check that both public and private IPs are correctly configured in your configuration file.
+  - Ensure that the servers are within the correct network range and can establish outbound connections.
+
+
+### Monitoring Tools Not Accessible
+
+- **Issue**: Prometheus, Grafana, or Loki dashboards are not accessible after deployment.
+- **Solution**:
+  - Check the logs of the respective Docker containers for errors:
+
+  ## Issues with Configuration File Validation
+
+### Issue:
+Errors related to configuration file validation.
+
+### Solution:
+- Ensure the configuration file (`config.json`) adheres to the correct format and contains all required fields.
+- Check for misconfigurations in the server authentication settings:
+  - If using `--temp-ssh` flag, ensure that the `auth_method` field in the configuration is set to `temp_key` for the relevant servers.
+  - If not using `--temp-ssh`, ensure that the `auth_method` is set to `key_path` and that the SSH key path is correctly specified.
+
+## Cluster Setup Failures
+
+### Issue:
+The Nomad cluster fails to initialize correctly.
+
+### Solution:
+- Ensure that all Nomad agents are properly configured with the correct `bind_addr` and that communication between the nodes is not blocked by a firewall.
+- Confirm that the Nomad cluster is running in a leader-follower configuration with the correct number of servers.
+- Check the logs for any failure messages related to Nomad or Consul.
+
+
+## Load Balancer Configuration Problems
+
+### Issue:
+The load balancer setup fails to route traffic properly.
+
+### Solution:
+- Ensure that Caddy is installed correctly and that the necessary proxy rules are configured.
+- Check that the load balancer is connected to the correct private IP and that the server running Caddy can access all backend servers.
+- Review the Caddy logs for any misconfigurations or errors.
+
+## Server Registration Failures
+
+### Issue:
+Servers fail to register with Tailscale or the Brimble API.
+
+### Solution:
+- Verify that the Tailscale network is properly set up and that all servers are part of the Tailscale network.
+- Check that the API endpoint for registering servers is reachable and that the `runner_id` and `license_key` are correctly specified during registration.
+
+<Callout type="warning">
+Ensure all servers in the cluster use the same authentication method to avoid setup conflicts.
+</Callout>
+
+
+## SSH Authentication Failures
+
+### Issue:
+SSH fails when attempting to connect to servers.
+
+### Solution:
+- If using the `--temp-ssh` flag, ensure that all servers have `"auth_method": "temp_key"` or no authentication method specified in their configurations.
+- If not using `--temp-ssh`, ensure that `"auth_method": "key_path"` is properly configured for each server and that the correct SSH key is provided.
+
+
+## Additional Resources
+
+For further assistance with troubleshooting, refer to the official Brimble 
+documentation and support channels. You can also consult the logs and configuration files to ensure that everything is properly set up. If you encounter issues that are not addressed here, feel free to reach out to the Brimble support team for more personalized help.
+  
+  

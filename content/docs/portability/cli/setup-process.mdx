@@ -1,0 +1,178 @@
+---
+title: "Setup Process"
+description: "This guide provides a step-by-step walkthrough to set up Brimble on your own server using our new CLI tool. The process ensures proper configuration and high availability for your infrastructure."
+---
+
+## Prerequisites
+
+Before proceeding, ensure you meet the following requirements:
+
+1. **Server Requirements**:
+   - Minimum: 32GB RAM, 2-4 CPU cores, 50GB storage
+   - Recommended: Additional resources based on workload
+2. **Network Configuration**:
+   - Private IP and Public IP set up for each server
+3. **Software Dependencies**:
+   - Docker
+   - Node.js (v20.x)
+   - Redis-server
+   - Consul-client
+   - Nomad
+4. **License**:
+   - A valid Brimble license (starting at $150/year)
+
+---
+
+## Installation Steps
+
+Follow these steps to set up your Brimble environment:
+
+### Step 1: Install the Runner
+
+The runner is a core component for distributed task execution.
+```js
+curl -fsSL https://cdn.brimble.io/runner.sh | bash
+```
+
+### Step 2: Register the Runner
+
+Use the API endpoint to register the installed runner:
+
+```js
+curl -X POST https://api.brimble.io/register-runner \
+-H "Content-Type: application/json" \
+-d '{"runner_id": "<your-runner-id>", "license_key": "<your-license-key>"}'
+```
+### Step 3: Set Up Server Dependencies
+
+Install all necessary dependencies:
+
+```js
+apt update && apt install -y docker.io redis-server nodejs consul-client
+```
+
+### Step 4: Configure Consul
+
+Create and validate the configuration for Consul:
+
+```js
+consul agent -dev -bind=<private_ip> -client=0.0.0.0 -ui
+```
+
+### Step 5: Set Up Nomad
+
+Deploy Nomad in a leader-follower configuration:
+
+```js
+nomad agent -config=/etc/nomad.d/nomad.hcl
+```
+Example configuration file (/etc/nomad.d/nomad.hcl):
+```js
+datacenter = "dc1"
+bind_addr  = "0.0.0.0"
+log_level  = "INFO"
+server {
+  enabled          = true
+  bootstrap_expect = 3
+}
+client {
+  enabled = true
+  servers = ["127.0.0.1"]
+}
+
+```
+
+
+### Step 6: Metrics, Monitoring, and Observability
+
+Set up tools for system monitoring:
+1. Install Prometheus and Grafana:
+```js
+docker run -d --name prometheus -p 9090:9090 prom/prometheus
+docker run -d --name grafana -p 3000:3000 grafana/grafana
+```
+2. Deploy node-exporter, cadvisor, and grafana-promtail for observability:
+```js
+docker run -d --name node-exporter -p 9100:9100 prom/node-exporter
+docker run -d --name cadvisor -p 8080:8080 google/cadvisor
+docker run -d --name grafana-promtail grafana/promtail:latest
+```
+3. Configure Loki for logging:
+```js
+docker run -d --name loki -p 3100:3100 grafana/loki:latest
+```
+
+
+
+
+
+### Step 7: Set Up the Load Balancer
+
+Install and configure Caddy as the load balancer:
+```package-install
+apt install -y caddy
+caddy reverse-proxy --from <public_ip> --to <private_ip>
+```
+
+## Configuration File Example
+Here's an example configuration file (config.json) for your deployment:
+```package-install
+{
+  "servers": [
+    {
+      "host": "test-2",
+      "username": "root",
+      "key_path": "~/.ssh/id_rsa",
+      "public_ip": "178.128.161.67",
+      "private_ip": "10.106.0.4",
+      "auth_method": "key_path",
+      "region": "europe"
+    }
+  ],
+  "cluster_config": {
+    "runner": {
+      "port": 3000,
+      "instances": 4
+    },
+    "consul": {
+      "consul_image": "hashicorp/consul:1.16"
+    },
+    "monitoring": {
+      "grafana_password": "password",
+      "metrics_port": 9100
+    },
+    "versions": {
+      "docker": "latest",
+      "nodejs": "20.x",
+      "nomad": "1.6.3"
+    }
+  }
+}
+```
+
+### License Key Validation Failure
+
+- **Issue**: The license key fails validation.
+- **Solution**: 
+  - Ensure the license key is valid and associated with your account.
+  - Verify that the correct license key is used during registration.
+
+---
+
+### Network Connectivity Issues
+
+- **Issue**: Servers cannot communicate due to network-related problems.
+- **Solution**:
+  - Verify that firewall rules allow the required ports for communication.
+  - Ensure that private and public IPs are correctly configured in your `config.json` file.
+
+---
+
+### Monitoring Tools Not Accessible
+
+- **Issue**: Prometheus, Grafana, or Loki dashboards are not accessible.
+- **Solution**:
+  - Check the container logs for the specific monitoring tool to identify errors:
+  
+
+<Callout type="warning"> Ensure all servers in the cluster use the same authentication method to avoid setup conflicts. </Callout> ```
