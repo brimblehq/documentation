@@ -85,4 +85,50 @@ The architecture is designed to balance performance, scalability, and security w
 ---
 
 ## Script Installation Process
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
+<Tabs items={["Script Installation", "Configuration File"]}>
+
+```bash tab="Script Installation"
+# Step 1: Download the setup script
+curl -O https://cdn.brimble.io/setup.sh
+
+# Step 2: Make the script executable
+chmod +x setup.sh
+
+# Step 3: Run the script with the 'runner' flag to install the Brimble runner
+./setup.sh --runner
+
+# Additional flags can be used for custom configurations:
+# ./setup.sh --runner --custom-flag=value
+// Example Configuration File for CLI
+{
+  "servers": [
+    {
+      "host": "server-1",
+      "username": "root",
+      "key_path": "~/.ssh/id_rsa",
+      "region": "europe",
+      "public_ip": "192.168.1.1",
+      "private_ip": "10.0.0.1",
+      "auth_method": "key_path"
+    }
+  ],
+  "cluster_config": {
+    "runner": {
+      "port": 3000,
+      "instances": 4
+    },
+    "monitoring": {
+      "grafana_password": "secure-password",
+      "metrics_port": 9100
+    },
+    "versions": {
+      "docker": "latest",
+      "nodejs": "20.x",
+      "nomad": "1.6.3"
+    }
+  }
+}
+```
+</Tabs> 
