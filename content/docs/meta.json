@@ -1,4 +1,4 @@
 {
     "title": "Brimble Documentation",
-    "pages": ["projects", "projects-and-deployments", "add-a-domain", "domain", "portability"]
+    "pages": ["index", "quickstart", "projects", "projects-and-deployments", "add-a-domain", "domain", "portability"]
   }
