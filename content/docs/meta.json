@@ -1,4 +1,14 @@
 {
     "title": "Brimble Documentation",
-    "pages": ["index", "quickstart", "projects", "projects-and-deployments", "add-a-domain", "domain", "portability"]
+    "pages": [
+      "---Getting Started---",
+      "index",
+     "quickstart",
+      "projects",
+       "projects-and-deployments",
+       "---Domains---",
+        "add-a-domain",
+         "domain",
+         "---Portability---",
+          "cli"]
   }
