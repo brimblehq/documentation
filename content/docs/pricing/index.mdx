@@ -1,0 +1,157 @@
+---
+title: Pricing
+description: Discover Brimble's pricing philosophy, designed for developers and teams. Flexible, transparent, and built to scale with your needs.
+---
+
+import { PlanComparisonTable } from '@/components/plan-comparison-table';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+# Overview
+
+At Brimble, we believe in **empowering developers** with tools that are not only powerful but also **affordable and transparent**. Our pricing is designed to grow with you, whether you're a solo developer working on a passion project or a large team building mission-critical applications. With **usage-based pricing**, you only pay for what you use, and our **developer-first approach** ensures you get the most value out of every dollar.
+
+<Callout type="info">
+  **Why Developers Love Brimble**:
+  - **Flexible Pricing**: Pay only for what you use—no hidden fees.
+  - **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+  - **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
+</Callout>
+
+## Choose Your Plan
+
+Brimble offers three main plans to suit your needs:
+
+<Cards>
+  <Card
+    title="Free Plan"
+    description="Perfect for personal projects and getting started."
+    href="/pricing/plans/free"
+  >
+    **$0.00/month**
+  </Card>
+
+  <Card
+    title="Pro Plan"
+    description="Ideal for professional developers and small teams."
+    href="/pricing/plans/pro"
+  >
+    **$15.00/month**
+  </Card>
+
+  <Card
+    title="Team Plan"
+    description="Built for teams and organizations with advanced needs."
+    href="/pricing/plans/team"
+  >
+    **$30.00/month**
+  </Card>
+</Cards>
+
+## Plan Comparison
+
+Here’s a quick comparison of the main features across our plans:
+
+<PlanComparisonTable
+  plans={{
+    "Free Plan": {
+      description: "Ideal for personal projects and getting started.",
+      features: [
+        "Personal Git Deployment",
+        "Live Project Preview",
+        "CLI Deployment",
+        "10 Project Limit",
+        "Automatic HTTPS / SSL",
+        "Instant Deployment Rollbacks",
+        "External Integration Support",
+      ],
+    },
+    "Pro Plan": {
+      description: "Perfect for professional developers and small teams.",
+      features: [
+        "All Free Plan Features",
+        "PR Preview Comments",
+        "100 Project Limit",
+        "Brimble Web Analytics",
+        "Organization Git Deployment",
+      ],
+    },
+    "Team Plan": {
+      description: "Built for teams and organizations with advanced needs.",
+      features: [
+        "All Pro Plan Features",
+        "Scheduled Deployments",
+        "Multiple Concurrent Builds",
+        "Passworded Sites",
+        "500 Project Limit",
+        "PR Previews",
+        "Premium Customer Support with Slack",
+      ],
+    },
+  }}
+/>
+
+---
+
+### Frequently Asked Questions (FAQ)
+
+Got questions? We’ve got answers. Here are some of the most common questions about Brimble’s pricing:
+
+<Accordions>
+  <Accordion title="What’s included in the Free Plan?" id="free-plan">
+    The Free Plan is perfect for personal projects and getting started. It includes:
+    - Personal Git Deployment
+    - Live Project Preview
+    - CLI Deployment
+    - 10 Project Limit
+    - Automatic HTTPS / SSL
+    - Instant Deployment Rollbacks
+    - External Integration Support
+  </Accordion>
+
+  <Accordion title="How does the Pro Plan differ from the Free Plan?" id="pro-plan">
+    The Pro Plan is designed for professional developers and small teams. In addition to all Free Plan features, it includes:
+    - PR Preview Comments
+    - 100 Project Limit
+    - Brimble Web Analytics
+    - Organization Git Deployment
+  </Accordion>
+
+  <Accordion title="What makes the Team Plan unique?" id="team-plan">
+    The Team Plan is built for teams and organizations with advanced needs. It includes all Pro Plan features, plus:
+    - Scheduled Deployments
+    - Multiple Concurrent Builds
+    - Passworded Sites
+    - 500 Project Limit
+    - PR Previews
+    - Premium Customer Support with Slack
+  </Accordion>
+
+  <Accordion title="Can I switch plans later?" id="switch-plans">
+    Absolutely! You can upgrade or downgrade your plan at any time. Your billing will be prorated based on your usage.
+  </Accordion>
+
+  <Accordion title="What happens if I exceed my usage limits?" id="usage-limits">
+    If you exceed your usage limits (e.g., bandwidth, build minutes), you’ll be charged based on our overage pricing. For example:
+    - **Bandwidth**: $25 for an additional 100GB.
+    - **Build Minutes**: $5 for an additional 1,000 minutes.
+    - **Projects**: $2 for each additional project slot.
+  </Accordion>
+
+  <Accordion title="Do you offer custom plans for large teams?" id="custom-plans">
+    Yes! If you have more than 7 team members or need custom configurations, [contact our sales team](/contact) for a tailored solution.
+  </Accordion>
+</Accordions>
+
+---
+
+### Why Choose Brimble?
+
+- **Developer-First**: Built by developers, for developers.
+- **Flexible Pricing**: Pay only for what you use, with no hidden fees.
+- **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+- **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
+
+Ready to get started? [Explore our plans](/pricing/plans) or [contact sales](/contact) for custom solutions.
