@@ -1,141 +1,126 @@
 ---
-title: Free Plan
-description: The Free Plan is perfect for personal projects and getting started with Brimble. Deploy your projects for free with essential features like live previews, CLI deployment, and more.
+title: Pricing Overview
+description: Discover Brimble’s flexible pricing plans, designed for developers and teams of all sizes. Choose the plan that fits your needs and scale effortlessly.
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-import { PlanComparisonTable } from '@/components/plan-comparison-table';
-import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
 
-# Free Plan
-
-At Brimble, we believe every developer should have access to **powerful tools** without breaking the bank. That’s why our **Free Plan** is designed to give you everything you need to **start building and deploying projects**—completely free of charge. Whether you’re working on a personal project, experimenting with new ideas, or just getting started with modern DevOps, the Free Plan has you covered.
+At Brimble, we believe in **empowering developers** with tools that are not only powerful but also **affordable and transparent**. Our pricing is designed to grow with you, whether you're a solo developer working on a passion project or a large team building mission-critical applications. With **usage-based pricing**, you only pay for what you use, and our **developer-first approach** ensures you get the most value out of every dollar.
 
 <Callout type="info">
-  **Why Start with the Free Plan?**
-  - **Zero Cost**: No credit card required. Ever.
-  - **Essential Features**: Everything you need to deploy and preview your projects.
-  - **Scalable**: Upgrade anytime to unlock advanced features.
+  **Why Developers Love Brimble**:
+  - **Flexible Pricing**: Pay only for what you use—no hidden fees.
+  - **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+  - **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
 </Callout>
 
 ---
 
-## What’s Included in the Free Plan?
+## Choose Your Plan
 
-The Free Plan is packed with features to help you **build, deploy, and preview** your projects with ease. Here’s what you get:
-
-<PlanComparisonTable
-  plans={{
-    "Free Plan": {
-      description: "Perfect for personal projects and getting started.",
-      features: [
-        "Personal Git Deployment",
-        "Live Project Preview",
-        "CLI Deployment",
-        "10 Project Limit",
-        "Automatic HTTPS / SSL",
-        "Instant Deployment Rollbacks",
-        "External Integration Support",
-      ],
-    },
-  }}
-/>
-
----
-
-## Who Is the Free Plan For?
-
-The Free Plan is perfect for:
-- **Hobbyists**: Build and deploy personal projects without worrying about costs.
-- **Students**: Learn modern DevOps and deployment workflows for free.
-- **Experimentation**: Test new ideas or frameworks with zero financial risk.
-- **Open Source Projects**: Deploy and share your open-source projects with the world.
-
-<Callout type="tip">
-  **Pro Tip**: If you’re working on a larger project or need more advanced features, consider upgrading to the [Pro Plan](/pricing/plans/pro) or [Team Plan](/pricing/plans/team).
-</Callout>
-
----
-
-## Limitations of the Free Plan
-
-While the Free Plan is packed with features, it does have some limitations to ensure fair usage:
-
-<PlanComparisonTable
-  plans={{
-    "Limitations": {
-      description: "Fair usage limits to ensure scalability for all users.",
-      features: [
-        "10 Project Slots",
-        "30GB Bandwidth / Month",
-        "300 Build Minutes / Month",
-        "1 Concurrent Build",
-        "3-Day Log Retention",
-      ],
-    },
-  }}
-/>
-
----
-
-## Frequently Asked Questions (FAQ)
-
-Got questions about the Free Plan? We’ve got answers:
-
-<Accordions>
-  <Accordion title="Is the Free Plan really free?" id="free-plan-cost">
-    Yes! The Free Plan is **100% free** with no hidden fees or credit card required. You can use it indefinitely for personal projects.
-  </Accordion>
-
-  <Accordion title="What happens if I exceed the Free Plan limits?" id="exceed-limits">
-    If you exceed the Free Plan limits (e.g., bandwidth, build minutes), you’ll need to upgrade to the [Pro Plan](/pricing/plans/pro) or [Team Plan](/pricing/plans/team) to continue using Brimble.
-  </Accordion>
-
-  <Accordion title="Can I use the Free Plan for commercial projects?" id="commercial-use">
-    The Free Plan is designed for **personal and non-commercial use**. If you’re working on a commercial project, we recommend upgrading to the [Pro Plan](/pricing/plans/pro) for additional features and higher limits.
-  </Accordion>
-
-  <Accordion title="How do I upgrade from the Free Plan?" id="upgrade-free-plan">
-    Upgrading is easy! Simply navigate to your [Billing Settings](/settings/billing) and choose the plan that best suits your needs. Your billing will be prorated based on your usage.
-  </Accordion>
-
-  <Accordion title="Can I use the Free Plan for open-source projects?" id="open-source">
-    Absolutely! The Free Plan is a great choice for deploying and sharing open-source projects. If your project grows, you can always upgrade to a paid plan for more resources.
-  </Accordion>
-</Accordions>
-
----
-
-## Ready to Get Started?
-
-The Free Plan is the perfect way to **start building and deploying** with Brimble. Whether you’re a hobbyist, student, or open-source contributor, you’ll find everything you need to bring your ideas to life.
+Brimble offers three main plans to suit your needs:
 
 <Cards>
   <Card
-    title="Get Started for Free"
-    description="Sign up and deploy your first project in minutes."
-    href="/signup"
+    title="Free Plan"
+    description="Perfect for personal projects and getting started."
+    href="/pricing/plans/free"
   >
     **$0.00/month**
   </Card>
 
   <Card
-    title="Explore Paid Plans"
-    description="Need more features? Check out our Pro and Team plans."
-    href="/pricing/plans"
+    title="Pro Plan"
+    description="Ideal for professional developers and small teams."
+    href="/pricing/plans/pro"
   >
-    **Learn More**
+    **$15.00/month**
+  </Card>
+
+  <Card
+    title="Team Plan"
+    description="Built for teams and organizations with advanced needs."
+    href="/pricing/plans/team"
+  >
+    **$30.00/month**
   </Card>
 </Cards>
 
 ---
 
+## Key Features Across All Plans
+
+No matter which plan you choose, you’ll get access to **core features** that make Brimble the best choice for modern deployment workflows:
+
+- **Git Deployment**: Connect your GitHub or GitLab repository and deploy in seconds.
+- **Live Project Preview**: Share a live URL to preview your project instantly.
+- **CLI Deployment**: Deploy from your terminal with the Brimble CLI.
+- **Automatic HTTPS / SSL**: Secure your deployments with free SSL certificates.
+- **Instant Deployment Rollbacks**: Revert to a previous version with one click.
+- **External Integration Support**: Integrate with third-party tools like Slack and GitHub.
+
+---
+
+## Why Choose Brimble?
+
+### **1. Flexible Pricing**
+With **usage-based pricing**, you only pay for what you use. Whether you’re hosting a small project or scaling a large application, Brimble grows with you.
+
+### **2. Developer-First Features**
+Brimble is built by developers, for developers. From **AI-assisted DevOps** to **edge computing**, we provide the tools you need to build and deploy faster.
+
+### **3. Seamless Integrations**
+Connect your GitHub or GitLab repository and deploy in seconds. Brimble integrates with the tools you already use, so you can focus on building.
+
+### **4. Scalable and Reliable**
+Whether you’re hosting 10 projects or 500, Brimble is designed to scale with your needs. With features like **instant rollbacks** and **automatic HTTPS**, you can deploy with confidence.
+
+---
+
+## Ready to Get Started?
+
+Choose the plan that’s right for you and start building with Brimble today.
+
+<Cards>
+  <Card
+    title="Free Plan"
+    description="Perfect for personal projects and getting started."
+    href="/pricing/plans/free"
+  >
+    **$0.00/month**
+  </Card>
+
+  <Card
+    title="Pro Plan"
+    description="Ideal for professional developers and small teams."
+    href="/pricing/plans/pro"
+  >
+    **$15.00/month**
+  </Card>
+
+  <Card
+    title="Team Plan"
+    description="Built for teams and organizations with advanced needs."
+    href="/pricing/plans/team"
+  >
+    **$30.00/month**
+  </Card>
+</Cards>
+
+---
+
+### Need Help Choosing?
+
+Not sure which plan is right for you? [Compare plans](/pricing/plans/choose-a-plan) or [contact our sales team](/contact) for personalized recommendations.
+
+---
+
 ### Why Developers Love Brimble
 
-- **Zero Friction**: Get started in minutes with no credit card required.
 - **Developer-First**: Built by developers, for developers.
-- **Scalable**: Upgrade seamlessly as your projects grow.
-- **Transparent Pricing**: No hidden fees—ever.
+- **Flexible Pricing**: Pay only for what you use, with no hidden fees.
+- **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+- **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
 
-Start building today with the **Free Plan** and experience the power of Brimble. 
+Ready to experience the Brimble difference? [Get started today](/signup).
