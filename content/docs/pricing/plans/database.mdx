@@ -1,0 +1,148 @@
+---
+title: Database Pricing
+description: The Brimble database pricing is designed for scalability and flexibility. Learn about memory, storage, and CPU usage costs for your database needs.
+---
+
+import { PlanComparisonTable } from '@/components/plan-comparison-table';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+At Brimble, we understand that **databases are the backbone of modern applications**. That’s why we’ve designed our database pricing to be **flexible, scalable, and transparent**, ensuring you only pay for the resources you use. Whether you’re running a small project or a large-scale application, our database pricing scales with your needs, so you never overpay for resources you don’t need.
+
+<Callout type="info">
+  **Why Choose Brimble for Databases?**
+  - **Flexibility**: Pay only for the memory, storage, and CPU you use.
+  - **Scalability**: Scale your database resources up or down seamlessly.
+  - **Transparency**: Clear pricing with no hidden fees.
+</Callout>
+
+---
+
+## What’s Included in Database Pricing?
+
+Brimble’s database pricing covers **key resources** that power your database workloads. Here’s a breakdown of what’s included:
+
+<PlanComparisonTable
+  plans={{
+    "Memory": {
+      description: "The amount of RAM allocated to your database.",
+      features: [
+        "**Pricing**: $2 per 1GB of memory used per month.",
+      ],
+    },
+    "Storage": {
+      description: "The amount of disk space allocated to your database.",
+      features: [
+        "**Pricing**: $2 per 1GB of storage used per month.",
+      ],
+    },
+    "CPU Usage": {
+      description: "The amount of CPU allocated to your database.",
+      features: [
+        "**Pricing**: $2 per 1vCPU used per month.",
+      ],
+    },
+  }}
+/>
+
+---
+
+## Key Database Metrics Explained
+
+Here’s a detailed look at the **key database metrics** and how they impact your pricing:
+
+### 1. **Memory**
+Memory (RAM) is critical for database performance, especially for in-memory operations and caching. Brimble charges **$2 per 1GB of memory used per month**.
+
+<Callout type="tip">
+  **Pro Tip**: Optimize memory usage by tuning your database configuration and using efficient queries.
+</Callout>
+
+### 2. **Storage**
+Storage refers to the disk space used by your database for storing data. Brimble charges **$2 per 1GB of storage used per month**.
+
+<Callout type="tip">
+  **Pro Tip**: Regularly archive unused data and compress your database to reduce storage costs.
+</Callout>
+
+### 3. **CPU Usage**
+CPU usage determines the processing power allocated to your database. Brimble charges **$2 per 1vCPU used per month**.
+
+<Callout type="tip">
+  **Pro Tip**: Optimize CPU usage by indexing your database and avoiding resource-intensive queries.
+</Callout>
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+Got questions about database pricing? We’ve got answers.
+
+<Accordions>
+  <Accordion title="How is database usage calculated?" id="usage-calculation">
+    Database usage is calculated based on the **memory, storage, and CPU** allocated to your database. You’re charged for the resources you use each month.
+  </Accordion>
+
+  <Accordion title="Can I scale my database resources up or down?" id="scale-resources">
+    Yes, you can scale your database resources up or down at any time. Your billing will be adjusted based on your usage.
+  </Accordion>
+
+  <Accordion title="What happens if I exceed my database limits?" id="exceed-limits">
+    If you exceed your database limits (e.g., memory, storage, CPU), you’ll be charged based on our overage pricing. For example:
+    - **Memory**: $2 per additional 1GB.
+    - **Storage**: $2 per additional 1GB.
+    - **CPU**: $2 per additional 1vCPU.
+  </Accordion>
+
+  <Accordion title="Do you offer managed database services?" id="managed-database">
+    Yes! Brimble offers managed database services, including backups, monitoring, and automatic scaling. [Contact our sales team](/contact) for more details.
+  </Accordion>
+
+  <Accordion title="Can I monitor my database usage in real-time?" id="monitor-usage">
+    Yes, you can monitor your database usage in real-time through the Brimble dashboard. We’ll also notify you if you’re approaching your limits.
+  </Accordion>
+</Accordions>
+
+---
+
+## Ready to Scale Your Database?
+
+Brimble’s database pricing ensures you only pay for what you use, making it the perfect choice for **developers and teams** of all sizes. Start building today and scale your database effortlessly as your project grows.
+
+<Cards>
+  <Card
+    title="Explore Free Plan"
+    description="Perfect for personal projects and getting started."
+    href="/pricing/plans/free"
+  >
+    **$0.00/month**
+  </Card>
+
+  <Card
+    title="Upgrade to Pro Plan"
+    description="Ideal for professional developers and small teams."
+    href="/pricing/plans/pro"
+  >
+    **$15.00/month**
+  </Card>
+
+  <Card
+    title="Explore Team Plan"
+    description="Built for teams with advanced needs."
+    href="/pricing/plans/team"
+  >
+    **$30.00/month**
+  </Card>
+</Cards>
+
+---
+
+### Why Developers Love Brimble
+
+- **Developer-First**: Built by developers, for developers.
+- **Flexible Pricing**: Pay only for what you use, with no hidden fees.
+- **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+- **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
+
+Take control of your database costs with **Brimble’s database pricing**—your gateway to flexible and scalable database workflows. 🚀

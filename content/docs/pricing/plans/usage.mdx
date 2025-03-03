@@ -1,0 +1,192 @@
+---
+title: Usage-Based Pricing
+description: Brimble’s usage-based pricing ensures you only pay for what you use. Learn about bandwidth, build minutes, projects, and more.
+---
+
+import { PlanComparisonTable } from '@/components/plan-comparison-table';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+
+At Brimble, we believe in **fair and transparent pricing**. That’s why we’ve designed our pricing model to be **usage-based**, ensuring you only pay for what you use. Whether you’re a solo developer or part of a large team, our flexible pricing scales with your needs, so you never overpay for resources you don’t need.
+
+<Callout type="info">
+  **Why Usage-Based Pricing?**
+  - **Flexibility**: Pay only for what you use—no hidden fees or surprises.
+  - **Scalability**: Scale up or down seamlessly as your project grows.
+  - **Transparency**: Clear pricing for every resource, from bandwidth to build minutes.
+</Callout>
+
+---
+
+## What’s Included in Usage-Based Pricing?
+
+Brimble’s usage-based pricing covers **key resources** that power your deployments. Here’s a breakdown of what’s included in each plan:
+
+<PlanComparisonTable
+  plans={{
+    "Free Plan": {
+      description: "Perfect for personal projects and getting started.",
+      features: [
+        "Bandwidth: 30GB/month",
+        "Build Minutes: 300/month",
+        "Projects: 10 slots",
+        "Log Retention: 3 days",
+        "Analytics: Not included",
+      ],
+    },
+    "Pro Plan": {
+      description: "Ideal for professional developers and small teams.",
+      features: [
+        "Bandwidth: 150GB/month",
+        "Build Minutes: 10K/month",
+        "Projects: 100 slots",
+        "Log Retention: 30 days",
+        "Analytics: Enabled for 50 sites",
+      ],
+    },
+    "Team Plan": {
+      description: "Built for teams and organizations with advanced needs.",
+      features: [
+        "Bandwidth: 500GB/month",
+        "Build Minutes: 25K/month",
+        "Projects: 500 slots",
+        "Log Retention: 90 days",
+        "Analytics: Enabled for 100 sites",
+      ],
+    },
+  }}
+/>
+
+---
+
+## Key Usage Metrics Explained
+
+Here’s a detailed look at the **key usage metrics** and how they impact your pricing:
+
+### 1. **Bandwidth**
+Bandwidth refers to the amount of data transferred between your site and its visitors. Each plan includes a monthly bandwidth allowance:
+- **Free Plan**: 30GB/month
+- **Pro Plan**: 150GB/month
+- **Team Plan**: 500GB/month
+
+<Callout type="warning">
+  **Overage Pricing**: If you exceed your bandwidth limit, additional bandwidth costs **$25 for every 100GB**.
+</Callout>
+
+### 2. **Build Minutes**
+Build minutes represent the time spent building your projects. Each plan includes a monthly build minute allowance:
+- **Free Plan**: 300 minutes/month
+- **Pro Plan**: 10K minutes/month
+- **Team Plan**: 25K minutes/month
+
+<Callout type="warning">
+  **Overage Pricing**: If you exceed your build minute limit, additional minutes cost **$5 for every 1,000 minutes**.
+</Callout>
+
+### 3. **Projects**
+Projects refer to the number of individual sites or applications you can host. Each plan includes a project slot limit:
+- **Free Plan**: 10 slots
+- **Pro Plan**: 100 slots
+- **Team Plan**: 500 slots
+
+<Callout type="warning">
+  **Overage Pricing**: If you exceed your project slot limit, additional slots cost **$2 per project/month**.
+</Callout>
+
+### 4. **Log Retention**
+Log retention determines how long your deployment logs are stored. Each plan includes a log retention period:
+- **Free Plan**: 3 days
+- **Pro Plan**: 30 days
+- **Team Plan**: 90 days
+
+<Callout type="tip">
+  **Pro Tip**: Longer log retention helps with debugging and monitoring, especially for larger teams.
+</Callout>
+
+### 5. **Analytics**
+Analytics provides insights into your site’s performance. Each plan includes analytics for a limited number of sites:
+- **Free Plan**: Not included
+- **Pro Plan**: Enabled for 50 sites
+- **Team Plan**: Enabled for 100 sites
+
+<Callout type="warning">
+  **Overage Pricing**: If you exceed your analytics limit, additional sites cost **$5 per site/month**.
+</Callout>
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+Got questions about usage-based pricing? We’ve got answers.
+
+<Accordions>
+  <Accordion title="What happens if I exceed my usage limits?" id="exceed-limits">
+    If you exceed your usage limits (e.g., bandwidth, build minutes), you’ll be charged based on our overage pricing. For example:
+    - **Bandwidth**: $25 for an additional 100GB.
+    - **Build Minutes**: $5 for an additional 1,000 minutes.
+    - **Projects**: $2 for each additional project slot.
+  </Accordion>
+
+  <Accordion title="Can I monitor my usage in real-time?" id="monitor-usage">
+    Yes, you can monitor your usage in real-time through the Brimble dashboard. We’ll also notify you if you’re approaching your limits.
+  </Accordion>
+
+  <Accordion title="Can I upgrade my plan to increase my limits?" id="upgrade-plan">
+    Absolutely! You can upgrade to a higher plan at any time to increase your usage limits. Your billing will be prorated based on your usage.
+  </Accordion>
+
+  <Accordion title="Is there a way to reduce my usage?" id="reduce-usage">
+    Yes, you can optimize your usage by:
+    - Reducing build times with efficient build configurations.
+    - Compressing assets to reduce bandwidth usage.
+    - Archiving unused projects to free up project slots.
+  </Accordion>
+
+  <Accordion title="Do you offer custom plans for high-usage teams?" id="custom-plans">
+    Yes! If your team has high usage needs, [contact our sales team](/contact) for a custom plan tailored to your requirements.
+  </Accordion>
+</Accordions>
+
+---
+
+## Ready to Scale with Usage-Based Pricing?
+
+Brimble’s usage-based pricing ensures you only pay for what you use, making it the perfect choice for **developers and teams** of all sizes. Start building today and scale effortlessly as your project grows.
+
+<Cards>
+  <Card
+    title="Explore Free Plan"
+    description="Perfect for personal projects and getting started."
+    href="/pricing/plans/free"
+  >
+    **$0.00/month**
+  </Card>
+
+  <Card
+    title="Upgrade to Pro Plan"
+    description="Ideal for professional developers and small teams."
+    href="/pricing/plans/pro"
+  >
+    **$15.00/month**
+  </Card>
+
+  <Card
+    title="Explore Team Plan"
+    description="Built for teams with advanced needs."
+    href="/pricing/plans/team"
+  >
+    **$30.00/month**
+  </Card>
+</Cards>
+
+---
+
+### Why Developers Love Brimble
+
+- **Developer-First**: Built by developers, for developers.
+- **Flexible Pricing**: Pay only for what you use, with no hidden fees.
+- **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+- **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
+
+Take control of your costs with **Brimble’s usage-based pricing**—your gateway to flexible and scalable deployment workflows.
