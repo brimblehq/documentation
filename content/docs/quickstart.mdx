@@ -1,48 +1,133 @@
 ---
-title: 'Quickstart'
-description: 'Begin your journey with Brimble in minutes'
+title: Quickstart
+description: Get started with Brimble in minutes. Deploy your first project and experience the power of a developer-first deployment platform.
 ---
 
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { UserRoundPlus, UserCheck, Rocket } from 'lucide-react';
 
-## Getting Started with Brimble
+# Quickstart: Deploy Your First Project in Minutes
 
-Welcome to Brimble, your ultimate platform for effortlessly deploying **JAMSTACK** frontend apps!
-In this step-by-step guide, we'll walk you through the process of getting started with Brimble, from creating an account to deploying your first project.
+Welcome to **Brimble**, the platform that makes deployment simple, fast, and developer-friendly. Whether you’re building a **JAMstack frontend**, a **full-stack application**, or a **static site**, Brimble has the tools to get your project live in minutes. Let’s dive in!
 
-## Before You Begin
+<Callout type="info">
+  **Why Developers Love Brimble**:
+  - **Effortless Deployment**: Connect your Git repository and deploy in seconds.
+  - **Full-Stack Support**: From React and Next.js to PHP/Laravel and Node.js, we’ve got you covered.
+  - **Scalable Infrastructure**: Grow from a small project to an enterprise-grade app without hassle.
+  - **Developer-First Features**: PR previews, instant rollbacks, and AI-assisted DevOps.
+</Callout>
 
-To begin your journey with Brimble, you'll need to create an account.
-If you haven't already, head over to our website and sign up for a new Brimble account. Choose the plan that suits your needs, and you're ready to go!
+---
 
-import { UserRoundPlus, UserCheck } from 'lucide-react';
+## Step 1: Create or Log In to Your Brimble Account
+
+Before you can deploy your project, you’ll need a Brimble account. If you don’t have one yet, signing up is quick and easy. Already have an account? Log in and let’s get started.
 
 <Cards>
-  <Card 
-    icon={<UserRoundPlus />} 
-    href="https://beta.brimble.io/" 
-    title="Signup"
+  <Card
+    icon={<UserRoundPlus />}
+    href="https://beta.brimble.io/"
+    title="Sign Up"
   >
-    If you've never used Brimble before, sign up for a new Brimble account.
+    New to Brimble? Create an account and choose the plan that fits your needs.
   </Card>
-  <Card 
-    icon={<UserCheck />} 
-    href="https://beta.brimble.io/overview" 
-    title="Signin"
+
+  <Card
+    icon={<UserCheck />}
+    href="https://beta.brimble.io/overview"
+    title="Log In"
   >
-    If you already have a Brimble account, log in to get started.
+    Already have an account? Log in to deploy your next project.
   </Card>
 </Cards>
 
-## Customizing Your Experience
+---
 
-Brimble supports a wide range of frontend frameworks, making it a versatile choice for developers.
-Whether you're using React, Nuxt, Astro, Next.js, Vue.js, or any other framework, Brimble has you covered. 
-Throughout this guide, we'll provide specific instructions tailored to your chosen framework.
+## Step 2: Connect Your Git Repository
 
-## Let's Dive In
+Brimble integrates seamlessly with **GitHub** and **GitLab**, so you can deploy your projects directly from your repository. Here’s how to connect:
 
-Now that you're all set up, let's dive into the world of Brimble! In the next sections, 
-we'll guide you through deploying your first project, exploring the powerful features of Brimble, 
-and much more.
+1. Navigate to your Brimble dashboard.
+2. Click **New Project**.
+3. Select your Git provider (GitHub or GitLab).
+4. Choose the repository you want to deploy.
 
-Get ready to supercharge your web development experience with Brimble!
+<Callout type="tip">
+  **Pro Tip**: If your repository is private, make sure to grant Brimble the necessary permissions during the connection process.
+</Callout>
+
+---
+
+## Step 3: Configure Your Deployment
+
+Once your repository is connected, Brimble will automatically detect your project type and suggest a configuration. Here’s what you need to do:
+
+1. **Select a Framework**: Brimble supports popular frameworks like React, Next.js, Vue.js, Nuxt, Astro, and more. If your framework isn’t listed, choose **Static Site** or **Custom**.
+2. **Set Environment Variables**: Add any environment variables your project needs (e.g., API keys, secrets).
+3. **Choose a Branch**: Select the branch you want to deploy (e.g., `main`, `develop`).
+
+<Callout type="warning">
+  **Heads Up**: If your project requires a custom build command or output directory, you can configure these settings in the **Advanced Options**.
+</Callout>
+
+---
+
+## Step 4: Deploy Your Project
+
+Once everything is configured, click **Deploy**. Brimble will:
+1. Build your project.
+2. Optimize it for production.
+3. Deploy it to a global CDN.
+
+You’ll get a **live URL** where your project is hosted. Share it with your team or the world!
+
+<Callout type="tip">
+  **Pro Tip**: Use Brimble’s **PR Previews** to test changes before merging them into your main branch. Perfect for collaboration!
+</Callout>
+
+---
+
+## Step 5: Explore Brimble’s Features
+
+Now that your project is live, take advantage of Brimble’s powerful features:
+
+- **Instant Rollbacks**: Revert to a previous version of your project with one click.
+- **Automatic HTTPS**: Secure your site with free SSL certificates.
+- **AI-Assisted DevOps**: Debug and optimize your deployments with built-in AI tools.
+- **Usage Analytics**: Monitor your project’s performance and usage in real-time.
+
+---
+
+## Ready to Build Something Amazing?
+
+Brimble is designed to help you focus on what matters most—**building exceptional software**. Whether you’re deploying a personal project or scaling an enterprise application, Brimble has the tools to make it happen.
+
+<Cards>
+  <Card
+    icon={<Rocket />}
+    href="/docs/features"
+    title="Explore Features"
+  >
+    Discover everything Brimble has to offer.
+  </Card>
+
+  <Card
+    icon={<UserRoundPlus />}
+    href="https://beta.brimble.io/"
+    title="Get Started"
+  >
+    Sign up and deploy your first project today.
+  </Card>
+</Cards>
+
+---
+
+### Why Developers Choose Brimble
+
+- **Developer-First**: Built by developers, for developers.
+- **Flexible Pricing**: Pay only for what you use—no hidden fees.
+- **Cutting-Edge Features**: Edge computing, serverless functions, and AI-assisted DevOps.
+- **Seamless Integrations**: Connect your GitHub or GitLab repo and deploy in seconds.
