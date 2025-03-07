@@ -85,7 +85,7 @@ export function Banner({
               color: 'ghost',
               className:
                 'absolute end-2 top-1/2 -translate-y-1/2 text-fd-muted-foreground',
-              size: 'icon',
+              size: 'sm', // Updated from 'icon' to 'sm'
             }),
           )}
         >
