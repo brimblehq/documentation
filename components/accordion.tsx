@@ -13,7 +13,6 @@ import {
   useEffect,
 } from 'react';
 import { cn } from '@/utils/cn';
-import { useCopyButton } from '@/utils/use-copy-button';
 import { buttonVariants } from '@/components/ui/button';
 
 export const Accordions = forwardRef<
@@ -83,12 +82,16 @@ export const Accordion = forwardRef<
 });
 
 function CopyButton({ id }: { id: string }): React.ReactElement {
-  const [checked, onClick] = useCopyButton(() => {
+  const [checked, setChecked] = useState(false);
+
+  const onClick = () => {
     const url = new URL(window.location.href);
     url.hash = id;
 
     void navigator.clipboard.writeText(url.toString());
-  });
+    setChecked(true);
+    setTimeout(() => setChecked(false), 2000); // Reset after 2 seconds
+  };
 
   return (
     <button
