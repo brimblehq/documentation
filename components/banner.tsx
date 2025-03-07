@@ -82,7 +82,7 @@ export function Banner({
           }}
           className={cn(
             buttonVariants({
-              color: 'ghost',
+              // Removed the invalid `color` property
               className:
                 'absolute end-2 top-1/2 -translate-y-1/2 text-fd-muted-foreground',
               size: 'sm', // Updated from 'icon' to 'sm'
