@@ -6,14 +6,12 @@ import {
   Rotate3d,
   Settings,
   Logs,
-  LayoutTemplate,
   Server,
   Compass,
 } from 'lucide-react';
 import Image from 'next/image';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { FumadocsIcon } from '@/app/layout.client';
-import Logo from '@/public/logo.png';
 import Preview from '@/public/logo.png';
 
 export const linkItems: LinkItemType[] = [

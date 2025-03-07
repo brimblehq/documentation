@@ -27,6 +27,7 @@ export function ImageZoom({
   zoomInProps,
   children,
   rmiz,
+  alt = '', // Default to empty string for decorative images
   ...props
 }: ImageZoomProps) {
   return (
@@ -43,6 +44,7 @@ export function ImageZoom({
       {children ?? (
         <Image
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 900px"
+          alt={alt} // Add the alt attribute here
           {...props}
         />
       )}

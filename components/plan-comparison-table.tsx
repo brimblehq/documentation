@@ -2,7 +2,6 @@
 
 import { InfoIcon } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import type { ReactNode } from 'react';
 
 interface Plan {
   description: string;
