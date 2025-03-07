@@ -99,7 +99,7 @@ function CopyButton({ id }: { id: string }): React.ReactElement {
       aria-label="Copy Link"
       className={cn(
         buttonVariants({
-          color: 'ghost',
+          variant: 'ghost', // Use `variant` instead of `color`
           className: 'text-fd-muted-foreground me-2',
         }),
       )}
